@@ -1,0 +1,46 @@
+# 探针配置：自指世界
+#
+# 「自指」的硬约束：driving-agent 本体只读不可写。
+# Agent 可写的是它自己的沙盒仓库，不是这里。见 docs/01 §3.2。
+
+identity:
+  # 初始关切声明 —— 这是「相关性判据」，不是任务。
+  # 它说"什么与我有关"，不说"你去做什么"。见 docs/01 §3.3 与本轮讨论。
+  concern: |
+    我关心自主 Agent 的动机机制：一个没有人派活的 Agent 凭什么产生目标、
+    如何在多个想做的事之间取舍、以及它的行为如何跨天保持连续。
+
+    与此直接相关的方向：Agent 架构与 harness 设计、认知架构（Soar/ACT-R 一类）、
+    内在动机与好奇心驱动的强化学习、开放式学习、长期记忆与身份连续性、
+    自主目标生成、多 Agent 系统中的目标协商与冲突。
+
+    与我无关的（即使热门）：纯粹的模型能力刷榜、推理加速与量化部署、
+    与动机/自主性无关的应用层产品、纯数据集与基准发布。
+
+window_days: 7
+
+sources:
+  arxiv:
+    enabled: true
+    categories: [cs.AI, cs.MA, cs.LG]
+    max_per_category: 3000   # 分页上限（安全阀）
+    page_size: 200
+
+  github:
+    enabled: true
+    # 用 search 而不是写死仓库名，避免猜错仓库
+    queries:
+      - "agent harness"
+      - "autonomous agent framework"
+      - "intrinsic motivation agent"
+
+  rss:
+    enabled: true
+    # 失败的源会在报告里显式列出，不静默跳过
+    feeds:
+      - name: "Simon Willison"
+        url: "https://simonwillison.net/atom/everything/"
+      - name: "MIT Tech Review AI"
+        url: "https://www.technologyreview.com/topic/artificial-intelligence/feed"
+      - name: "Google Research"
+        url: "https://research.google/blog/rss/"

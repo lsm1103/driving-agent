@@ -1,0 +1,722 @@
+{
+  "aa089f94cf3f": {
+    "id": "aa089f94cf3f",
+    "relevant": true,
+    "reason": "研究发展机制使微型机器人终身自主探索、学习与适应技能，直接对应开放式学习与自主能力发展",
+    "kind": "exploration"
+  },
+  "842e92b4715a": {
+    "id": "842e92b4715a",
+    "relevant": true,
+    "reason": "harness 设计覆盖工具、持久状态与权限，lifecycle 视角触及行为跨会话的连续性",
+    "kind": "exploration"
+  },
+  "afea6d9d6f2f": {
+    "id": "afea6d9d6f2f",
+    "relevant": false,
+    "reason": "关注人类使用 AI 的统计透明度，与动机机制无关",
+    "kind": "none"
+  },
+  "e9ce5cef438b": {
+    "id": "e9ce5cef438b",
+    "relevant": false,
+    "reason": "多轮对话上下文保持，属对话系统，非自主动机",
+    "kind": "none"
+  },
+  "a7b48fa6a0d8": {
+    "id": "a7b48fa6a0d8",
+    "relevant": false,
+    "reason": "委托-代理契约与激励设计的机制经济学，非自主目标生成",
+    "kind": "none"
+  },
+  "58580d4b8a3e": {
+    "id": "58580d4b8a3e",
+    "relevant": false,
+    "reason": "长上下文推理的效率与显存优化，非长期记忆连续性",
+    "kind": "none"
+  },
+  "508368d0ecfc": {
+    "id": "508368d0ecfc",
+    "relevant": false,
+    "reason": "教育决策反事实方案，无关",
+    "kind": "none"
+  },
+  "c768da011533": {
+    "id": "c768da011533",
+    "relevant": false,
+    "reason": "无人机人群计数部署，无关",
+    "kind": "none"
+  },
+  "62d73f778f94": {
+    "id": "62d73f778f94",
+    "relevant": false,
+    "reason": "机械臂抓取 RL 优化，无关",
+    "kind": "none"
+  },
+  "b993f79bdf6b": {
+    "id": "b993f79bdf6b",
+    "relevant": false,
+    "reason": "查询扩展与检索，无关",
+    "kind": "none"
+  },
+  "e4fe7971d111": {
+    "id": "e4fe7971d111",
+    "relevant": false,
+    "reason": "因果推理 do 算子形式化，无关",
+    "kind": "none"
+  },
+  "76a0527bf3b7": {
+    "id": "76a0527bf3b7",
+    "relevant": false,
+    "reason": "推理状态可解释性读出，非动机机制",
+    "kind": "none"
+  },
+  "a5a5f8cf2326": {
+    "id": "a5a5f8cf2326",
+    "relevant": true,
+    "reason": "Agent 依据推断的效用函数在多目标间取舍，偏好/效用建模直接关系'如何在想做的事之间取舍'",
+    "kind": "exploration"
+  },
+  "6ee3ae15742b": {
+    "id": "6ee3ae15742b",
+    "relevant": false,
+    "reason": "自闭症 ML 综述，无关",
+    "kind": "none"
+  },
+  "77c39ac29a70": {
+    "id": "77c39ac29a70",
+    "relevant": false,
+    "reason": "GUI agent 注入攻击安全，非动机机制",
+    "kind": "none"
+  },
+  "25c3270db64e": {
+    "id": "25c3270db64e",
+    "relevant": false,
+    "reason": "agent 社群观点极化攻击，非目标协商",
+    "kind": "none"
+  },
+  "2806f83fbf50": {
+    "id": "2806f83fbf50",
+    "relevant": false,
+    "reason": "安全补丁回移基准，无关",
+    "kind": "none"
+  },
+  "2231c1cf7a48": {
+    "id": "2231c1cf7a48",
+    "relevant": true,
+    "reason": "自进化 agent 将经验转为技能/记忆，审计其是否保持既有正确行为与安全，涉及长期记忆与行为连续性/漂移",
+    "kind": "maintenance"
+  },
+  "53dafc52f032": {
+    "id": "53dafc52f032",
+    "relevant": false,
+    "reason": "幻觉检测信号，无关",
+    "kind": "none"
+  },
+  "30dddf046739": {
+    "id": "30dddf046739",
+    "relevant": false,
+    "reason": "架构决策记录生成，无关",
+    "kind": "none"
+  },
+  "9d3744998cf3": {
+    "id": "9d3744998cf3",
+    "relevant": false,
+    "reason": "机器人路径规划，无关",
+    "kind": "none"
+  },
+  "cfae5e45408c": {
+    "id": "cfae5e45408c",
+    "relevant": false,
+    "reason": "级联推理鲁棒性与能耗，无关",
+    "kind": "none"
+  },
+  "ab0666e8773c": {
+    "id": "ab0666e8773c",
+    "relevant": false,
+    "reason": "信贷风险解释，无关",
+    "kind": "none"
+  },
+  "7f2dff455cfa": {
+    "id": "7f2dff455cfa",
+    "relevant": true,
+    "reason": "长程 agent 轨迹是否仍对应被授权任务，漂移会悄然累积，涉及目标连续性与意图保持",
+    "kind": "maintenance"
+  },
+  "15c8a699ea64": {
+    "id": "15c8a699ea64",
+    "relevant": false,
+    "reason": "LLM API 迁移回归，无关",
+    "kind": "none"
+  },
+  "27756d7801ae": {
+    "id": "27756d7801ae",
+    "relevant": false,
+    "reason": "生成内容多样性评估，非动机",
+    "kind": "none"
+  },
+  "e960ea097a45": {
+    "id": "e960ea097a45",
+    "relevant": false,
+    "reason": "公交路线多 agent 复杂度，无关",
+    "kind": "none"
+  },
+  "32dd9a76e45c": {
+    "id": "32dd9a76e45c",
+    "relevant": false,
+    "reason": "混合交通协同控制 MARL，无关",
+    "kind": "none"
+  },
+  "12879da9a3d4": {
+    "id": "12879da9a3d4",
+    "relevant": false,
+    "reason": "神经符号本体学习，无关",
+    "kind": "none"
+  },
+  "c02ea5a6a42f": {
+    "id": "c02ea5a6a42f",
+    "relevant": false,
+    "reason": "DecPOMDP 复杂度计数，无关",
+    "kind": "none"
+  },
+  "016647c7612f": {
+    "id": "016647c7612f",
+    "relevant": true,
+    "reason": "agent 持久记忆跨会话的召回/修订/个性化诊断，直接对应长期记忆与身份连续性",
+    "kind": "maintenance"
+  },
+  "79c92debd059": {
+    "id": "79c92debd059",
+    "relevant": false,
+    "reason": "CSI 信道反馈，无关",
+    "kind": "none"
+  },
+  "070bbbd7db4e": {
+    "id": "070bbbd7db4e",
+    "relevant": false,
+    "reason": "无人机热成像检测，无关",
+    "kind": "none"
+  },
+  "3e1aff849294": {
+    "id": "3e1aff849294",
+    "relevant": false,
+    "reason": "通用 agent 工作流基准，属能力评测非动机",
+    "kind": "none"
+  },
+  "cbd7c890a011": {
+    "id": "cbd7c890a011",
+    "relevant": false,
+    "reason": "LLM 认知构念可解释性，非动机",
+    "kind": "none"
+  },
+  "967a5d73f529": {
+    "id": "967a5d73f529",
+    "relevant": false,
+    "reason": "两轮车碰撞风险，无关",
+    "kind": "none"
+  },
+  "e1f03c0f2b7c": {
+    "id": "e1f03c0f2b7c",
+    "relevant": false,
+    "reason": "上下文泄漏攻击，无关",
+    "kind": "none"
+  },
+  "39f6474ad7a5": {
+    "id": "39f6474ad7a5",
+    "relevant": true,
+    "reason": "对长运行自主 agentic 工作流的监控与转向，涉及 harness 设计及跨长程行为连续性与目标转向",
+    "kind": "exploration"
+  },
+  "bb11c85c00f3": {
+    "id": "bb11c85c00f3",
+    "relevant": false,
+    "reason": "LLM 几何约束 encode-steer 差距，非动机",
+    "kind": "none"
+  },
+  "3ec21d3b607a": {
+    "id": "3ec21d3b607a",
+    "relevant": false,
+    "reason": "表格预测，无关",
+    "kind": "none"
+  },
+  "c844e3ee30a0": {
+    "id": "c844e3ee30a0",
+    "relevant": false,
+    "reason": "CT 分割风险控制，与动机/自主性无关",
+    "kind": "none"
+  },
+  "ea843e1fa56f": {
+    "id": "ea843e1fa56f",
+    "relevant": false,
+    "reason": "多模态基准发布，属数据集/基准范畴",
+    "kind": "none"
+  },
+  "39077a02c7d6": {
+    "id": "39077a02c7d6",
+    "relevant": false,
+    "reason": "Jaccard 距离纯理论结果，无关",
+    "kind": "none"
+  },
+  "4a7834bfebb2": {
+    "id": "4a7834bfebb2",
+    "relevant": true,
+    "reason": "自主研究系统连接想法生成与执行，涉及自主目标生成与 Agent harness 设计，对应'无人派活的 Agent 如何产生目标'",
+    "kind": "exploration"
+  },
+  "d1983b7467be": {
+    "id": "d1983b7467be",
+    "relevant": false,
+    "reason": "军事目标检测应用，无关",
+    "kind": "none"
+  },
+  "9fea334948bf": {
+    "id": "9fea334948bf",
+    "relevant": false,
+    "reason": "学生与 AI 互动教育应用，无关",
+    "kind": "none"
+  },
+  "7772e7bddf7a": {
+    "id": "7772e7bddf7a",
+    "relevant": false,
+    "reason": "多智能体路径规划避障，不涉及目标协商与动机",
+    "kind": "none"
+  },
+  "d8e1e4148af8": {
+    "id": "d8e1e4148af8",
+    "relevant": false,
+    "reason": "鲁棒 MDP 策略组合理论，与动机无关",
+    "kind": "none"
+  },
+  "8f054c7758de": {
+    "id": "8f054c7758de",
+    "relevant": true,
+    "reason": "多 Agent 集体规划中的协调、同意与验证机制，对应多 Agent 系统中的目标协商与冲突",
+    "kind": "exploration"
+  },
+  "745267882dba": {
+    "id": "745267882dba",
+    "relevant": false,
+    "reason": "金融变点检测的领域应用，非动机机制",
+    "kind": "none"
+  },
+  "fdfeb3c59e51": {
+    "id": "fdfeb3c59e51",
+    "relevant": false,
+    "reason": "评分 rubric 的模型能力评估，无关",
+    "kind": "none"
+  },
+  "a296f5c2e873": {
+    "id": "a296f5c2e873",
+    "relevant": false,
+    "reason": "RL 采样调度效率优化，无关",
+    "kind": "none"
+  },
+  "ad1a2a5f2a7b": {
+    "id": "ad1a2a5f2a7b",
+    "relevant": false,
+    "reason": "程序化关卡内容生成，非 Agent 目标/动机",
+    "kind": "none"
+  },
+  "0b130dd8abad": {
+    "id": "0b130dd8abad",
+    "relevant": false,
+    "reason": "自动特征工程优化，无关",
+    "kind": "none"
+  },
+  "b6293e889b69": {
+    "id": "b6293e889b69",
+    "relevant": false,
+    "reason": "代码世界模型验证风险，无关",
+    "kind": "none"
+  },
+  "acdc370b17ad": {
+    "id": "acdc370b17ad",
+    "relevant": false,
+    "reason": "神经符号世界模型的迁移，与动机无关",
+    "kind": "none"
+  },
+  "dd3af411babc": {
+    "id": "dd3af411babc",
+    "relevant": false,
+    "reason": "日志异常检测校准，无关",
+    "kind": "none"
+  },
+  "89ccb5f58ba3": {
+    "id": "89ccb5f58ba3",
+    "relevant": false,
+    "reason": "超声舌部分割，无关",
+    "kind": "none"
+  },
+  "33dab3da38cc": {
+    "id": "33dab3da38cc",
+    "relevant": false,
+    "reason": "政治意识形态追踪应用，无关",
+    "kind": "none"
+  },
+  "69ab00f609d8": {
+    "id": "69ab00f609d8",
+    "relevant": false,
+    "reason": "生物科学 AI 可信度，与自主性无关",
+    "kind": "none"
+  },
+  "b679059675cf": {
+    "id": "b679059675cf",
+    "relevant": true,
+    "reason": "把 LLM 派生的奖励信号形式化为混合 Agent 的奖励塑造，涉及目标/奖励如何驱动行为，对应内在动机与目标生成",
+    "kind": "exploration"
+  },
+  "eee1240c85e6": {
+    "id": "eee1240c85e6",
+    "relevant": false,
+    "reason": "飞行安全事件解释，无关",
+    "kind": "none"
+  },
+  "092be7e623fc": {
+    "id": "092be7e623fc",
+    "relevant": false,
+    "reason": "音乐 tokenization 分析，无关",
+    "kind": "none"
+  },
+  "9ad34cb38d88": {
+    "id": "9ad34cb38d88",
+    "relevant": false,
+    "reason": "MRI 重建方法，无关",
+    "kind": "none"
+  },
+  "a48f9c3dfdb6": {
+    "id": "a48f9c3dfdb6",
+    "relevant": true,
+    "reason": "为知识工作 Agent 提供版本化持久工作区，涉及 harness 设计与长期记忆/跨时间工作连续性",
+    "kind": "exploration"
+  },
+  "86d4e4be530d": {
+    "id": "86d4e4be530d",
+    "relevant": false,
+    "reason": "交通拥堵绕行应用，无关",
+    "kind": "none"
+  },
+  "e4d9bd4381cb": {
+    "id": "e4d9bd4381cb",
+    "relevant": false,
+    "reason": "用户对 Agent 委托的接受度，属人机交互/应用，非动机机制",
+    "kind": "none"
+  },
+  "0e6c0434a118": {
+    "id": "0e6c0434a118",
+    "relevant": true,
+    "reason": "研究基于记忆库的自我改进 Agent 在在线任务流中的脆弱性，直接对应开放式学习、长期记忆与跨天行为连续性",
+    "kind": "exploration"
+  },
+  "cd0e76d765c5": {
+    "id": "cd0e76d765c5",
+    "relevant": false,
+    "reason": "图像生成数据设计，无关",
+    "kind": "none"
+  },
+  "6e4f24257279": {
+    "id": "6e4f24257279",
+    "relevant": false,
+    "reason": "委托契约的委托代理经济学，非自主 Agent 目标生成",
+    "kind": "none"
+  },
+  "45d802d30318": {
+    "id": "45d802d30318",
+    "relevant": false,
+    "reason": "人形机器人全身控制，无关",
+    "kind": "none"
+  },
+  "04b134abf2f8": {
+    "id": "04b134abf2f8",
+    "relevant": false,
+    "reason": "病毒变异检测，无关",
+    "kind": "none"
+  },
+  "941d62c9f22b": {
+    "id": "941d62c9f22b",
+    "relevant": false,
+    "reason": "生物与人工神经网络表征对齐，与动机无关",
+    "kind": "none"
+  },
+  "e6ce081fca12": {
+    "id": "e6ce081fca12",
+    "relevant": false,
+    "reason": "野生动物识别应用，无关",
+    "kind": "none"
+  },
+  "27d7837bbb4d": {
+    "id": "27d7837bbb4d",
+    "relevant": false,
+    "reason": "LLM 隐私脱敏，无关",
+    "kind": "none"
+  },
+  "59f4e654a138": {
+    "id": "59f4e654a138",
+    "relevant": false,
+    "reason": "MoE 推理系统内存带宽研究，无关",
+    "kind": "none"
+  },
+  "ab5ea633748c": {
+    "id": "ab5ea633748c",
+    "relevant": false,
+    "reason": "用 LLM 研究人类行为结构，非 Agent 动机",
+    "kind": "none"
+  },
+  "b7a772093829": {
+    "id": "b7a772093829",
+    "relevant": false,
+    "reason": "Agent 演化地震重建算法，属程序搜索应用，非动机",
+    "kind": "none"
+  },
+  "e92e0116a203": {
+    "id": "e92e0116a203",
+    "relevant": false,
+    "reason": "软件任务难度刻画，与目标生成/动机无关",
+    "kind": "none"
+  },
+  "c1e5dedf3c3f": {
+    "id": "c1e5dedf3c3f",
+    "relevant": false,
+    "reason": "药物发现 LLM 评估，无关",
+    "kind": "none"
+  },
+  "b3b51f7b0de9": {
+    "id": "b3b51f7b0de9",
+    "relevant": false,
+    "reason": "结构化信息抽取应用，与动机机制无关",
+    "kind": "none"
+  },
+  "57ff34402f73": {
+    "id": "57ff34402f73",
+    "relevant": false,
+    "reason": "AI生成数据的去偏统计推断，与动机无关",
+    "kind": "none"
+  },
+  "c78e4e0d1eff": {
+    "id": "c78e4e0d1eff",
+    "relevant": false,
+    "reason": "CGM公平性基准，属应用评测，无关",
+    "kind": "none"
+  },
+  "6a9c47ee01ce": {
+    "id": "6a9c47ee01ce",
+    "relevant": false,
+    "reason": "LLM-as-judge生命周期，评测方法，无关",
+    "kind": "none"
+  },
+  "6c53e8c621cc": {
+    "id": "6c53e8c621cc",
+    "relevant": false,
+    "reason": "LLM评判分解方法，无关",
+    "kind": "none"
+  },
+  "5ea3000033b3": {
+    "id": "5ea3000033b3",
+    "relevant": false,
+    "reason": "计算机使用Agent组件故障诊断，属能力评测非动机",
+    "kind": "none"
+  },
+  "673f086aa6b0": {
+    "id": "673f086aa6b0",
+    "relevant": false,
+    "reason": "联邦学习模态补全，无关",
+    "kind": "none"
+  },
+  "34c2dc47cfb3": {
+    "id": "34c2dc47cfb3",
+    "relevant": false,
+    "reason": "治理记录自训练工作流修复，无关",
+    "kind": "none"
+  },
+  "72eb532c6308": {
+    "id": "72eb532c6308",
+    "relevant": false,
+    "reason": "考试部分得分基准，无关",
+    "kind": "none"
+  },
+  "adf27264bbb7": {
+    "id": "adf27264bbb7",
+    "relevant": false,
+    "reason": "Mojo开源新闻，无关",
+    "kind": "none"
+  },
+  "e3b1dd3aa44a": {
+    "id": "e3b1dd3aa44a",
+    "relevant": false,
+    "reason": "VLM最优传输适配，无关",
+    "kind": "none"
+  },
+  "080276a7c700": {
+    "id": "080276a7c700",
+    "relevant": false,
+    "reason": "神经形态声学异常检测，无关",
+    "kind": "none"
+  },
+  "0d664b754b2f": {
+    "id": "0d664b754b2f",
+    "relevant": false,
+    "reason": "分子性质预测网络，无关",
+    "kind": "none"
+  },
+  "e3269c27b583": {
+    "id": "e3269c27b583",
+    "relevant": false,
+    "reason": "最小权限学习，属授权控制非动机",
+    "kind": "none"
+  },
+  "25e40580ff69": {
+    "id": "25e40580ff69",
+    "relevant": false,
+    "reason": "无人机交通监督控制，控制理论非目标协商",
+    "kind": "none"
+  },
+  "844c48d65391": {
+    "id": "844c48d65391",
+    "relevant": false,
+    "reason": "动作前控制门，属权限治理非动机",
+    "kind": "none"
+  },
+  "44d0c1f514a9": {
+    "id": "44d0c1f514a9",
+    "relevant": false,
+    "reason": "测试时聚合方法，无关",
+    "kind": "none"
+  },
+  "a259dc0c7a73": {
+    "id": "a259dc0c7a73",
+    "relevant": false,
+    "reason": "GPAI治理政策调查，无关",
+    "kind": "none"
+  },
+  "36525d042877": {
+    "id": "36525d042877",
+    "relevant": false,
+    "reason": "缺失模态情绪识别，无关",
+    "kind": "none"
+  },
+  "43a9e03f3288": {
+    "id": "43a9e03f3288",
+    "relevant": false,
+    "reason": "代码Agent鲁棒性评测，能力相关非动机",
+    "kind": "none"
+  },
+  "1686d2f47103": {
+    "id": "1686d2f47103",
+    "relevant": false,
+    "reason": "可穿戴压力分类，无关",
+    "kind": "none"
+  },
+  "a23697648197": {
+    "id": "a23697648197",
+    "relevant": false,
+    "reason": "Agent审计追踪图，属可审计性非动机",
+    "kind": "none"
+  },
+  "6ae32e7f2471": {
+    "id": "6ae32e7f2471",
+    "relevant": false,
+    "reason": "策略梯度表征方法，非内在动机",
+    "kind": "none"
+  },
+  "e8fe141329d3": {
+    "id": "e8fe141329d3",
+    "relevant": false,
+    "reason": "组合优化形式抽象，无关",
+    "kind": "none"
+  },
+  "f8a85a434d46": {
+    "id": "f8a85a434d46",
+    "relevant": false,
+    "reason": "数值推理机制解释，无关",
+    "kind": "none"
+  },
+  "2fe43039abdc": {
+    "id": "2fe43039abdc",
+    "relevant": true,
+    "reason": "直接测量Agent在长期限内、行动有累积后果且环境反作用于选择时能否持续有效决策，并含竞争Agent，触及跨天连续性与多Agent目标取舍两个核心关切",
+    "kind": "exploration"
+  },
+  "ee4b4a913ccb": {
+    "id": "ee4b4a913ccb",
+    "relevant": false,
+    "reason": "心理健康教学LLM，应用无关",
+    "kind": "none"
+  },
+  "285ed382837f": {
+    "id": "285ed382837f",
+    "relevant": false,
+    "reason": "三重逻辑形式化验证，无关",
+    "kind": "none"
+  },
+  "dae7cb9bee73": {
+    "id": "dae7cb9bee73",
+    "relevant": false,
+    "reason": "训练调度加速，无关",
+    "kind": "none"
+  },
+  "72cede16465e": {
+    "id": "72cede16465e",
+    "relevant": false,
+    "reason": "甲烷分析多Agent应用框架，非目标协商",
+    "kind": "none"
+  },
+  "28f8b9f3b6e1": {
+    "id": "28f8b9f3b6e1",
+    "relevant": false,
+    "reason": "硬件断言生成，无关",
+    "kind": "none"
+  },
+  "aed740b8e01b": {
+    "id": "aed740b8e01b",
+    "relevant": false,
+    "reason": "稀疏注意力加速，无关",
+    "kind": "none"
+  },
+  "2a8980226b2a": {
+    "id": "2a8980226b2a",
+    "relevant": true,
+    "reason": "多Agent协作中通过伙伴建模在队友策略漂移时自适应重新规划，直接对应多Agent系统目标协商与冲突这一方向",
+    "kind": "exploration"
+  },
+  "5dc4b70547de": {
+    "id": "5dc4b70547de",
+    "relevant": false,
+    "reason": "无线场建模神经算子，无关",
+    "kind": "none"
+  },
+  "879559d9154f": {
+    "id": "879559d9154f",
+    "relevant": false,
+    "reason": "人工意识现象学第一人称进路，偏向意识而非身份连续性，弱相关",
+    "kind": "none"
+  },
+  "227f4930989c": {
+    "id": "227f4930989c",
+    "relevant": false,
+    "reason": "多模态检索嵌入排序，无关",
+    "kind": "none"
+  },
+  "f5b652a2c75d": {
+    "id": "f5b652a2c75d",
+    "relevant": false,
+    "reason": "计算化学Agent应用综述，关注能力非动机",
+    "kind": "none"
+  },
+  "85dc4cd5f314": {
+    "id": "85dc4cd5f314",
+    "relevant": false,
+    "reason": "视盘分割模型，无关",
+    "kind": "none"
+  },
+  "0f519e245cb6": {
+    "id": "0f519e245cb6",
+    "relevant": false,
+    "reason": "稠密描述检索负样本，无关",
+    "kind": "none"
+  },
+  "4d623fe1726b": {
+    "id": "4d623fe1726b",
+    "relevant": false,
+    "reason": "无线信道压缩，无关",
+    "kind": "none"
+  }
+}
