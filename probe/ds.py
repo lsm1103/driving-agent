@@ -7,7 +7,7 @@
 
 三次失败不静默兜底：抛 StructuredCallFailed。失败本身是实验数据。
 """
-import json, os, time, pathlib, urllib.request
+import datetime, json, os, time, pathlib, urllib.request
 
 from jsonschema import Draft7Validator
 
@@ -57,6 +57,7 @@ def _log_usage(step: str, resp: dict) -> None:
     _USAGE_LOG.parent.mkdir(parents=True, exist_ok=True)
     with _USAGE_LOG.open("a", encoding="utf-8") as f:
         f.write(json.dumps({
+            "ts": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "step": step,
             "model": resp.get("model"),
             "prompt_tokens": u.get("prompt_tokens"),
@@ -68,8 +69,16 @@ def _log_usage(step: str, resp: dict) -> None:
 
 
 def call_structured(step, system, user, tool_name, schema,
-                    effort=None, max_tokens=8000, retries=3):
-    """返回经 schema 校验的 dict。失败抛 StructuredCallFailed。"""
+                    effort=None, max_tokens=8000, retries=3, extra_check=None):
+    """返回经 schema + 业务校验的 dict。失败抛 StructuredCallFailed。
+
+    extra_check(data) -> str | None
+        schema 管不了的约束在这里查，返回错误描述即判定失败并回灌重试。
+        最典型的是**引用完整性**：schema 只能验证 "id 是字符串"，
+        验证不了 "这个 id 真的存在于输入集合里"。探针实测出现过 4 例
+        id 转写错误（丢首字符、末位抄错），内容全对但标识符指向不存在的对象，
+        schema 校验一路放行。见 docs/06 §3.3。
+    """
     validator = Draft7Validator(schema)
     tool = {"type": "function", "function": {
         "name": tool_name, "description": f"提交 {step} 的结构化结果", "parameters": schema}}
@@ -104,6 +113,8 @@ def call_structured(step, system, user, tool_name, schema,
                 if errs:
                     why = "schema 校验失败: " + "; ".join(
                         f"{list(e.path)}: {e.message}" for e in errs[:5])
+                elif extra_check and (bad := extra_check(data)):
+                    why = f"业务校验失败: {bad}"
                 else:
                     return data
 

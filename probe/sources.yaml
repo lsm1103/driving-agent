@@ -22,7 +22,9 @@ window_days: 7
 sources:
   arxiv:
     enabled: true
-    categories: [cs.AI, cs.MA, cs.LG]
+    # cs.LG 已摘除：探针实测 142 条、0 条相关，纯成本无辨别力贡献（docs/06 §3.4）
+    # 真正提供负样本的是 cs.AI（811 条里 731 条不相关）
+    categories: [cs.AI, cs.MA]
     max_per_category: 3000   # 分页上限（安全阀）
     page_size: 200
 
