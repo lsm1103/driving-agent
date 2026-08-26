@@ -64,7 +64,7 @@ def from_arxiv(cfg, since):
                                    e.find("a:summary", ns).text, e.find("a:id", ns).text))
                     n += 1
                 start += page
-                time.sleep(3)          # arXiv 要求礼貌间隔
+                time.sleep(5)          # arXiv 要求礼貌间隔（30 天窗口分页更深）
                 if oldest_in_window:   # 本页已出现窗口外的条目，说明拉够了
                     break
             print(f"  arxiv/{cat}: {n} 条")

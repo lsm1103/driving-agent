@@ -14,8 +14,8 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
-from ds import call_structured, StructuredCallFailed
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from core.ds import call_structured, StructuredCallFailed
 
 CHUNK = 50                              # 单批上限；按天分批，超过则切块
 WORKERS = 6                             # 批次间无依赖，可并发；日循环本身不能（见 docs/06 §10）
@@ -142,8 +142,10 @@ def report(signals, results):
         ok_days += 3 <= hit <= 6
         print(f"  {day}  {tot:4d} 条 → 登记 {hit:3d}  ({hit/tot:5.1%})  {flag}")
     avg = len(reg) / len(per_day)
-    print(f"\n日均登记 {avg:.1f} 条  |  预算 {DAILY_SLOTS} 槽  |  "
-          f"净流入 {avg-DAILY_SLOTS:+.1f}/天  →  30 天累积 {(avg-DAILY_SLOTS)*30:+.0f} 条")
+    # ⚠️ 不要用 avg - DAILY_SLOTS 估净流入：那假设「1 槽 = 1 闭合」，实测每个行动
+    # 平均只闭合 0.56 条，5 槽约 2.25 个行动 → 约 1.25 闭合/天（docs/07 §1）。
+    print(f"\n日均登记（流入）{avg:.1f} 条  |  预算 {DAILY_SLOTS} 槽"
+          f"  |  实际净流入需由日循环实测，见 docs/07 §1")
     print(f"落在 3~6 区间的天数：{ok_days}/{len(per_day)}")
     print(f"\nkind 分布：{dict(Counter(d['kind'] for d in reg))}")
     ex = sum(1 for d in reg if d["kind"] == "exploration")

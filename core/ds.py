@@ -7,7 +7,7 @@
 
 三次失败不静默兜底：抛 StructuredCallFailed。失败本身是实验数据。
 """
-import datetime, json, os, time, pathlib, urllib.request
+import datetime, json, os, time, pathlib, urllib.error, urllib.request
 
 from jsonschema import Draft7Validator
 
@@ -22,6 +22,14 @@ _USAGE_LOG = pathlib.Path("fixtures/usage.jsonl")
 
 class StructuredCallFailed(RuntimeError):
     """重试耗尽。调用方必须处理，不得用默认值糊过去。"""
+
+
+class InsufficientBalance(RuntimeError):
+    """账户余额不足（402）。重试没有意义 —— 立刻停，等充值后续跑。"""
+
+
+class TransientAPIError(RuntimeError):
+    """限流或服务端错误。可以退避重试。"""
 
 
 def _unquote(v: str) -> str:
@@ -42,13 +50,32 @@ def _key() -> str:
 
 
 def _post(payload: dict) -> dict:
+    """把 HTTP 错误翻译成分类异常。
+
+    这层原先不存在 —— 402 直接从重试层穿到顶把 27 天回放炸在第 4 天（docs/07 §9）。
+    区分「重试有意义」和「重试没意义」是这层唯一的职责。
+    """
     req = urllib.request.Request(
         f"{BASE_URL}/chat/completions",
         data=json.dumps(payload).encode(),
         headers={"Authorization": f"Bearer {_key()}", "Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=600) as r:
-        return json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=600) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", "replace")[:300]
+        if e.code == 402:
+            raise InsufficientBalance(
+                "DeepSeek 账户余额不足（HTTP 402）。充值后用同一条命令续跑，"
+                f"已完成的天数会自动跳过。\n  接口返回: {body}") from e
+        if e.code == 401:
+            raise RuntimeError(f"鉴权失败（401），检查 .env 里的 deepseek_Key。{body}") from e
+        if e.code == 429 or e.code >= 500:
+            raise TransientAPIError(f"HTTP {e.code}: {body}") from e
+        raise RuntimeError(f"HTTP {e.code}: {body}") from e
+    except urllib.error.URLError as e:
+        raise TransientAPIError(f"网络错误: {e.reason}") from e
 
 
 def _log_usage(step: str, resp: dict) -> None:
@@ -86,14 +113,24 @@ def call_structured(step, system, user, tool_name, schema,
     problems = []
 
     for attempt in range(1, retries + 1):
-        resp = _post({
-            "model": MODEL,
-            "max_tokens": max_tokens,          # 给足：推理吃额度，不够会静默返空
-            "reasoning_effort": effort or EFFORT.get(step, "high"),
-            "tools": [tool],
-            "tool_choice": "auto",             # 强制不可用，只能靠提示词施压
-            "messages": msgs,
-        })
+        try:
+            resp = _post({
+                "model": MODEL,
+                "max_tokens": max_tokens,      # 给足：推理吃额度，不够会静默返空
+                "reasoning_effort": effort or EFFORT.get(step, "high"),
+                "tools": [tool],
+                "tool_choice": "auto",         # 强制不可用，只能靠提示词施压
+                "messages": msgs,
+            })
+        except InsufficientBalance:
+            raise                      # 重试没有意义，立刻停
+        except TransientAPIError as e:
+            if attempt == retries:
+                raise StructuredCallFailed(f"{step}: {e}") from e
+            wait = 5 * 2 ** attempt
+            print(f"  ⏳ {step} 第{attempt}次遇到 {e}，{wait}s 后重试")
+            time.sleep(wait)
+            continue
         _log_usage(step, resp)
         choice = resp["choices"][0]
         why = None

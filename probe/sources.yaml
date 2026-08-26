@@ -17,7 +17,7 @@ identity:
     与我无关的（即使热门）：纯粹的模型能力刷榜、推理加速与量化部署、
     与动机/自主性无关的应用层产品、纯数据集与基准发布。
 
-window_days: 7
+window_days: 32   # agent 自选的对账周期是 7~17 天，窗口须 >= 最长到期日 + 余量
 
 sources:
   arxiv:
@@ -25,7 +25,7 @@ sources:
     # cs.LG 已摘除：探针实测 142 条、0 条相关，纯成本无辨别力贡献（docs/06 §3.4）
     # 真正提供负样本的是 cs.AI（811 条里 731 条不相关）
     categories: [cs.AI, cs.MA]
-    max_per_category: 3000   # 分页上限（安全阀）
+    max_per_category: 8000   # 分页上限（安全阀）
     page_size: 200
 
   github:

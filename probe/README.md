@@ -32,11 +32,11 @@ nohup .venv/bin/python -u probe/judge.py > fixtures/judge.log 2>&1 &
 | 文件 | 作用 |
 |---|---|
 | `sources.yaml` | 关切声明 + 订阅源配置 |
-| `ds.py` | DeepSeek 结构化调用封装：**校验—重试层** |
+| `core/ds.py` | DeepSeek 结构化调用封装：**校验—重试层** |
 | `collect.py` | 拉取外生信号，分页、去重、按天分桶 |
 | `judge.py` | 按关切声明跑 Intake 判断，实测忽略率 |
 
-## `ds.py` 为什么存在
+## `core/ds.py` 为什么存在
 
 三条实测约束（[../docs/05-模型与运行环境.md](../docs/05-模型与运行环境.md)）：
 
