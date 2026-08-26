@@ -30,6 +30,9 @@ class Ledger:
         self.db = sqlite3.connect(path)
         self.db.row_factory = sqlite3.Row
         self.db.executescript(SCHEMA.read_text(encoding="utf-8"))
+        cols = {r[1] for r in self.db.execute("PRAGMA table_info(decision)")}
+        if "rationale" not in cols:          # 老库迁移
+            self.db.execute("ALTER TABLE decision ADD COLUMN rationale TEXT NOT NULL DEFAULT ''")
         self.db.commit()
 
     def _write(self, sql, params, ctx=""):
@@ -100,10 +103,11 @@ class Ledger:
         for c in candidates:
             self._write(
                 "INSERT OR REPLACE INTO decision(day,candidate_id,proposal,cost_slots,"
-                "closes_loops,chosen,reject_reason,drive_snapshot) VALUES(?,?,?,?,?,?,?,?)",
+                "closes_loops,chosen,rationale,reject_reason,drive_snapshot) "
+                "VALUES(?,?,?,?,?,?,?,?,?)",
                 (day, c["id"], c["proposal"], c["cost_slots"],
                  json.dumps(sorted(c.get("closes_loops", []))), int(c["chosen"]),
-                 c.get("reject_reason"), snap), f"决策 {c['id']}")
+                 c.get("rationale", ""), c.get("reject_reason"), snap), f"决策 {c['id']}")
 
     # ---------- 续跑支持 ----------
     def finish_day(self, day, real_date, slots_total, slots_used):

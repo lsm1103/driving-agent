@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS decision (
   cost_slots     INTEGER NOT NULL CHECK (cost_slots > 0),
   closes_loops   TEXT NOT NULL DEFAULT '[]',
   chosen         INTEGER NOT NULL CHECK (chosen IN (0,1)),
+  rationale      TEXT NOT NULL DEFAULT '',
   reject_reason  TEXT,
   drive_snapshot TEXT NOT NULL,
   PRIMARY KEY (day, candidate_id),
